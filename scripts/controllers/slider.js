@@ -1,0 +1,35 @@
+'use strict';
+
+/**
+ * @ngdoc function
+ * @name webappApp.controller:SliderCtrl
+ * @description
+ * # SliderCtrl
+ * Controller of the webappApp
+ */
+
+ // var clApp = angular.module('webappApp', [
+ //     'ngAnimate',
+ //     'ngCookies',
+ //     'ngResource',
+ //     'ngRoute',
+ //     'ngSanitize',
+ //     'ngTouch'
+ //   ]);
+
+clApp.controller('SliderCtrl', function ($scope) {
+  $scope.images = [{
+    src: 'slide_one.png',
+    link: 'about',
+    title: 'Pic 1'
+  }, {
+    src: 'slide_two.png',
+    link: 'leagues',
+    title: 'Pic 2'
+  }, {
+    src: 'slide_three.png',
+    link: 'contact',
+    title: 'Pic 3'
+  }];
+
+});
