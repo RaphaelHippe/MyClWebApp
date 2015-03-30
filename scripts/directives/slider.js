@@ -18,9 +18,10 @@
 clApp.directive('slider', function ($timeout) {
     return {
       restrict: 'AE',
-      // replace: true,
+      replace: true,
       scope: {
-        images: '='
+        images: '=' //,
+        // imageDots: '='
       },
       link: function (scope, elem, attrs) {
 
@@ -34,10 +35,22 @@ clApp.directive('slider', function ($timeout) {
       			scope.currentIndex > 0 ? scope.currentIndex-- : scope.currentIndex = scope.images.length - 1;
       		};
 
+          scope.goTo = function(index){
+            scope.currentIndex = index;
+            console.log('test index', index);
+          };
+
       		scope.$watch('currentIndex',function(){
+
+            // scope.imageDots.forEach(function(imageDot){
+            //   imageDot.border = 0;
+            // });
+
       			scope.images.forEach(function(image){
       				image.visible = false;
       			});
+
+            // scope.imageDots[scope.currentIndex].border = 2;
       			scope.images[scope.currentIndex].visible=true;
       		});
 

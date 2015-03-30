@@ -22,8 +22,8 @@
       <div id="rightNav">
         <div>
           <ul ng-hide="loggedIn" id="userNav">
-            <li class="loginBtn"><a ng-click="loggMeIn()" href="">LOGIN</a></li>
-            <li class="joinBtn">JOIN</li>
+            <li class="loginBtn"><a ng-click="showLogin()" href="">LOGIN</a></li>
+            <li class="joinBtn"><a ng-click="showJoin()" href="">JOIN</a></li>
           </ul>
 
           <ul ng-show="loggedIn" id="userNavCheers">
@@ -31,9 +31,9 @@
           </ul>
           <br />
           <ul ng-show="loggedIn" id="userControls">
-            <li><a href="">Profile</a></li>
+            <li><a ng-href="#/profile" href="">Profile</a></li>
             <li>&nbsp;|&nbsp;</li>
-            <li><a href="">Account</a></li>
+            <li><a ng-href="#/account" href="">Account</a></li>
             <li>&nbsp;|&nbsp;</li>
             <li><a id="logoutBtn" ng-click="loggMeOut()" href="">Logout</a></li>
           </ul>

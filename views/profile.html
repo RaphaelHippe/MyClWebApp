@@ -1,0 +1,140 @@
+<div ng-hide="loggedIn">
+  <!-- USER IS NOT LOGGED IN -->
+  <div class="textContent">
+    <h2>Please login to see this part of the website</h2>
+  </div>
+</div>
+<div ng-show="loggedIn">
+  <!-- USER IS LOGGED IN -->
+    <div class="displayAccountInformation textContent">
+			<div class="displayAccount">
+				<div class="spacer"></div>
+				<h1 ng-bind="currentUser.displayName"></h1>
+				<div class="right">
+					<img src="" />
+				</div>
+				<div class="clear spacer"></div>
+			</div>
+		</div>
+
+		 <!-- END ALL COMMON HEADERS, DISPLAY SPECIFIC CONTENT THROUGH SWITCH CASE -->
+
+		<!-- Start base user display -->
+		<div class=" emptySite textContent" ng-show="currentUser.playerRank===0">
+			<h1>To create a Public Profile Page you need to be registered as Free Agent or a Staff Member</h1>
+			<div class="textCentered">
+				<a href=""><input class="button" type="submit" value="Free Agent"></a>
+				<a href=""><input class="button" type="submit" value="Staff Application"></a>
+			</div>
+		</div>
+		<!-- End base user display -->
+
+		<!-- Start free agent display -->
+			<div class="displayAccount textContent" ng-show="currentUser.playerRank===1">
+				<h2>Player Stats</h2>
+				<div class="right">
+					<div class="accountPlayerStats">
+						<div class="accountPlayerName">{{currentUser.displayName}}</div>
+						<div class="accountPlayerTeamIcon"></div>
+						<div class="accountPlayerIcon"></div>
+						<div class="accountPlayerKDA">13.5</div>
+						<div class="accountPlayerGPM">425</div>
+						<div class="accountPlayerCSPM">6.5</div>
+					</div>
+
+				</div>
+				<div class="clear spacer"></div>
+			</div>
+		<!-- End free agent display -->
+
+		<!-- Start player display -->
+			<div class="displayAccount textContent" ng-show="currentUser.playerRank===2 || currentUser.playerRank===3">
+				<h2>Player and Team Stats</h2>
+				<div class="left">
+					<div class="teamStats">
+						<div class="teamName">YouchraLand</div>
+						<div class="teamIcon"></div>
+						<div class="teamClLeague">Diamond and Above</div>
+						<div class="teamClRank">4</div>
+						<div class="teamGamesPlayed">20</div>
+						<div class="teamWLRecord">14/6</div>
+						<div class="teamTotalKD">98/72</div>
+						<div class="teamMVP">Youchra</div>
+					</div>
+					<div class="teamRoster">
+						<div class="teamTopLaner">Youchra</div>
+						<div class="teamJungle">Youchra</div>
+						<div class="teamMidLaner">Youchra</div>
+						<div class="teamMarksman">Youchra</div>
+						<div class="teamSupport">Youchra</div>
+						<div class="teamSubstituteOne">Youchra</div>
+						<div class="teamSubstituteTwo">Youchra</div>
+						<div class="teamSubstituteThree">Youchra</div>
+						<div class="teamSubstituteFour">Youchra</div>
+					</div>
+				</div>
+				<div class="right">
+					<div class="accountPlayerStats">
+						<div class="accountPlayerName">{{currentUser.displayName}}</div>
+						<div class="accountPlayerTeamIcon"></div>
+						<div class="accountPlayerIcon"></div>
+						<div class="accountPlayerKDA">13.5</div>
+						<div class="accountPlayerGPM">425</div>
+						<div class="accountPlayerCSPM">6.5</div>
+					</div>
+
+				</div>
+				<div class="clear spacer"></div>
+			</div>
+		<!-- End player display -->
+
+		<!-- Start captain display -->
+			<div class="displayAccount textContent" ng-show="currentUser.playerRank===4 || currentUser.playerRank===5">
+				<h2>Player and Team Stats</h2>
+				<div class="left">
+					<div class="teamStats">
+						<div class="teamName">YouchraLand</div>
+						<div class="teamIcon"></div>
+						<div class="teamClLeague">Diamond and Above</div>
+						<div class="teamClRank">4</div>
+						<div class="teamGamesPlayed">20</div>
+						<div class="teamWLRecord">14/6</div>
+						<div class="teamTotalKD">98/72</div>
+						<div class="teamMVP">Youchra</div>
+					</div>
+					<div class="teamRoster">
+						<div class="teamTopLaner">Youchra</div>
+						<div class="teamJungle">Youchra</div>
+						<div class="teamMidLaner">Youchra</div>
+						<div class="teamMarksman">Youchra</div>
+						<div class="teamSupport">Youchra</div>
+						<div class="teamSubstituteOne">Youchra</div>
+						<div class="teamSubstituteTwo">Youchra</div>
+						<div class="teamSubstituteThree">Youchra</div>
+						<div class="teamSubstituteFour">Youchra</div>
+					</div>
+				</div>
+				<div class="right">
+					<div class="accountPlayerStats">
+						<div class="accountPlayerName"><?=$user->display?></div>
+						<div class="accountPlayerTeamIcon"></div>
+						<div class="accountPlayerIcon"></div>
+						<div class="accountPlayerKDA">13.5</div>
+						<div class="accountPlayerGPM">425</div>
+						<div class="accountPlayerCSPM">6.5</div>
+					</div>
+
+				</div>
+				<div class="clear spacer"></div>
+			</div>
+		<!-- End captain display -->
+			<!-- //END SPECIFIC CONTENT
+
+			//DISPLAY ALL COMMON FOOTERS
+			//END COMMON FOOTERS, END PAGE
+
+		//END OF USER FOUND -- No code beyond this point
+	//END: baseUser
+	//START: FreeAgent -->
+
+</div>

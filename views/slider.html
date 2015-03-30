@@ -2,4 +2,13 @@
 	<div class="slide" ng-repeat="image in images" ng-show="image.visible">
 		<a ng-href="#/{{image.link}}"><img height="300px" width="1018px" ng-src="../images/slider/{{image.src}}" /></a>
 	</div>
+	<div class="sliderNav">
+	<!-- <div class="centered" ng-repeat="imageDot in imageDots">
+		<div class="sliderDot" ng-click="goTo(imageDot.index)"></div>
+	</div> -->
+	<div class="centered" ng-repeat="image in images">
+		<div class="sliderDot" ng-click="goTo(image.index)"></div>
+	</div>
+
+
 </div>

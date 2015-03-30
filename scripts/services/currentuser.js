@@ -21,7 +21,7 @@ angular.module('webappApp')
       username: 'admin', //username of the user. Used for logging in
       userpw: 'competeleague', //userpassword. Used for logging in
       player: false, //Is player in a league or not (BOOLEAN)
-      playerRank: 0, //The Rank of the player: 0 = no player, 1 = sub, 2 = player, 3 = viceCaptain, 4 = captain (INTEGER)
+      playerRank: 1, //The Rank of the player: 0 = no player, 1 = freeAgent, 2 = sub, 3 = player, 4 = vicecaptain 5 = cpt (INTEGER)
       staff: true, //is staff member or not (BOOLEAN)
       staffRank: 10 // The rank 10 = admin for now (INTEGER)
     };
@@ -42,19 +42,23 @@ angular.module('webappApp')
     };
 
     cus._loggMeOut = function(){
-      cus._loggedIn = false;
-      console.log('test');
+        cus._loggedIn = false;
+        console.log('loggMeOut', cus._loggedIn);
+        return cus._loggedIn;
+      // console.log('test');
       // more later
     };
 
     cus._loggMeIn = function(){
-      cus._loggedIn = true;
+        cus._loggedIn = true;
+        console.log('loggMeIn', cus._loggedIn);
+        return cus._loggedIn;
       // more later
     };
 
     cus._joinCompeteLeague = function(){
       // do something
-    }
+    };
 
 
 

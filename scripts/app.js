@@ -14,7 +14,8 @@ var clApp = angular.module('webappApp', [
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'angularModalService'
   ]);
 
   clApp.config(function ($routeProvider) {
@@ -57,32 +58,41 @@ var clApp = angular.module('webappApp', [
         templateUrl: 'views/termsAndConditions.html',
         controller: 'AboutCtrl' //termsAndConditionsCtrl
       })
+    /* PROFIEL and ACCOUNT*/
+      .when('/account', {
+        templateUrl: 'views/account.html',
+        controller: 'AccountCtrl'
+      })
+      .when('/profile', {
+        templateUrl: 'views/profile.html',
+        controller: 'ProfileCtrl'
+      })
     /* LEAGUES ROUTES*/
-    .when('/leaguesSilverPremier', {
-        templateUrl: 'views/leaguesDetails.html',
-        controller: 'AboutCtrl' //silverPremierCtrl
-    })
-    .when('leaguesPlatinumPremier', {
-        templateUrl: 'views/leaguesDetails.html',
-        controller: 'AboutCtrl' //platinumPremierCtrl
-    })
-    .when('leaguesDiamondPremier', {
-        templateUrl: 'views/leaguesDetails.html',
-        controller: 'AboutCtrl' //diamondPremierCtrl
-    })
-    .when('/leaguesSilverOpen', {
-        templateUrl: 'views/leaguesDetails.html',
-        controller: 'AboutCtrl' //silverOpenCtrl
-    })
-    .when('leaguesPlatinumOpen', {
-        templateUrl: 'views/leaguesDetails.html',
-        controller: 'AboutCtrl' //platinumOpenCtrl
-    })
-    .when('leaguesDiamondOpen', {
-        templateUrl: 'views/leaguesDetails.html',
-        controller: 'AboutCtrl' //diamondOpenCtrl
-    })
-      .otherwise({
-        redirectTo: '/'
+      .when('/leaguesSilverPremier', {
+          templateUrl: 'views/leaguesDetails.html',
+          controller: 'AboutCtrl' //silverPremierCtrl
+      })
+      .when('leaguesPlatinumPremier', {
+          templateUrl: 'views/leaguesDetails.html',
+          controller: 'AboutCtrl' //platinumPremierCtrl
+      })
+      .when('leaguesDiamondPremier', {
+          templateUrl: 'views/leaguesDetails.html',
+          controller: 'AboutCtrl' //diamondPremierCtrl
+      })
+      .when('/leaguesSilverOpen', {
+          templateUrl: 'views/leaguesDetails.html',
+          controller: 'AboutCtrl' //silverOpenCtrl
+      })
+      .when('leaguesPlatinumOpen', {
+          templateUrl: 'views/leaguesDetails.html',
+          controller: 'AboutCtrl' //platinumOpenCtrl
+      })
+      .when('leaguesDiamondOpen', {
+          templateUrl: 'views/leaguesDetails.html',
+          controller: 'AboutCtrl' //diamondOpenCtrl
+      })
+        .otherwise({
+          redirectTo: '/'
       });
-  });
+});
